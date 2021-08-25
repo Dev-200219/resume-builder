@@ -7,6 +7,8 @@ import {useEffect} from "react"
 import {auth, firestore} from "./firebase.js"
 import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "./Redux/Actions/userActions";
+import PersonalInfo from "./Components/PersonalInfo";
+import Preview from "./Components/Preview";
 
 let App = () => {
 
@@ -44,6 +46,12 @@ let App = () => {
       <Router>
         <Navbar />
         <Switch>
+          <Route exact path="/personalInfo">
+            <PersonalInfo/>
+          </Route>
+          <Route exact path="/preview">
+            <Preview/>
+          </Route>
           <Route exact path="/">
             <Home/>
           </Route>
